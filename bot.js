@@ -270,6 +270,8 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
  GER  -------------------> Germany
  UK    -------------------> United Kingdom
  CA    -------------------> Canada
+ NZ   -------------------> New Zealand
+ EU   -------------------> Dubai
  
  ==================================
       [Prefix : $]
