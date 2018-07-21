@@ -29,6 +29,7 @@ client.user.setGame(`Dating Roles |$roles `,"http://twitch.tv/S-F")
 });
 
 
+
 client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Night Blade
   if (message.content.startsWith('$remove NA')) {
      if(!message.channel.guild) return;
