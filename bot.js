@@ -36,8 +36,6 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
     message.reply('Your role **[NA] North America** has been Removed');
  }
  }); 
-
-
 	 
 	 
 client.on('message', message => {
@@ -47,6 +45,44 @@ client.on('message', message => {
     message.reply('Your role updated to **[NA] North America** ');
  }
  }); 
+
+
+client.on('message', message => {
+  if (message.content.startsWith('$add NZ')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "[NZ] New Zealand "));
+    message.reply('Your role updated to **[NZ] New Zealand** ');
+ }
+ }); 
+
+
+client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Night Blade
+  if (message.content.startsWith('$remove NZ')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "[NZ] New Zealand"));
+    message.reply('Your role **[NZ] New Zealand** has been Removed');
+ }
+ }); 
+
+
+client.on('message', message => {
+  if (message.content.startsWith('$add EU')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "[EU] DUBAI"));
+    message.reply('Your role updated to **[EU] Dubai** ');
+ }
+ }); 
+
+
+client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Night Blade
+  if (message.content.startsWith('$remove EU')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "[EU] Dubai"));
+    message.reply('Your role **[EU] Dubai** has been Removed');
+ }
+ }); 
+
+
  
  client.on('message', message => {
   if (message.content.startsWith('$add SA')) {
