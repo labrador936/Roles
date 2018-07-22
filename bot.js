@@ -1016,9 +1016,6 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
     message.reply('Your role **League of Legends** has been Removed');
  }
 });
- message.channel.send(embed);
-}  
-});
 
 
 
