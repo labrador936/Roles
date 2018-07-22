@@ -30,6 +30,193 @@ client.user.setGame(`Dating Roles |$roles `,"http://twitch.tv/S-F")
 
 
 
+client.on('message', message => {
+if (message.content.startsWith('$roles')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+    let pages = [`
+•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
+:earth_africa: Countries :earth_africa:
+
+
+ღ   EP   -------------------> Europe
+ღ
+ღ   NA   -------------------> North America
+ღ
+ღ   SA   -------------------> South America
+ღ
+ღ   MA   -------------------> Morocco
+ღ
+ღ   AUS  -------------------> Australia
+ღ
+ღ   AS   -------------------> Asia
+ღ
+ღ   RUS  -------------------> Russia
+ღ
+ღ   GER  -------------------> Germany
+ღ
+ღ   UK   -------------------> United Kingdom
+ღ
+ღ   CA   -------------------> Canada
+ღ
+ღ   NZ   -------------------> New Zealand
+ღ
+ღ   EU   -------------------> Dubai
+ღ   
+•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
+
+Click On ▶ To Go Games Side
+
+usage :arrow_heading_down:
+
+$add            To add a role
+$remove     To remove a role
+   `
+,`
+•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
+:video_game:  Games :video_game:
+
+ 
+ღ  RS6    --------> Rainbow Six Siege
+ღ
+ღ  GTA5
+ღ
+ღ  CSGO    --------> Counter Strike Global Offensive
+ღ
+ღ  RUST
+ღ
+ღ  GMOD    --------> Garrys Mod
+ღ
+ღ  LOL    --------> League of Legends
+ღ
+ღ  BF1    --------> Battlefield 1
+ღ
+ღ  BF3    --------> Battlefield 3
+ღ
+ღ  BF4    --------> Battlefield 4
+ღ
+ღ  FORTNITE
+ღ
+ღ  MC    --------> Minecraft
+ღ
+ღ  PUBG    --------> Playerunknowns Battlegrounds
+ღ
+ღ  FIFA 18
+ღ
+ღ  COD    --------> Call of duty
+ღ
+ღ  COD WW3    --------> Call of duty world war 3
+ღ
+ღ  COD BO3   --------> Call of duty black ops 3
+ღ
+ღ  BRAWLHALLA
+ღ
+ღ  PES 18    --------> Pro Evolution Soccer 2018
+ღ
+ღ  DOFUS
+ღ
+ღ  H1Z1
+ღ
+•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
+
+Click On ▶ To Go To General Roles
+
+usage :arrow_heading_down:
+
+$add            To add a role
+$remove     To remove a role
+   `,`
+•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
+:gear: General Roles :gear:
+ 
+ 
+ღ  Coder
+ღ
+ღ  Gamer
+ღ
+ღ  Gamer Girl
+ღ
+ღ  Female
+ღ
+ღ  Male
+ღ
+ღ  Streamer
+ღ
+ღ  Youtuber
+ღ
+ღ  Designer
+ღ 
+ღ  DJ
+ღ
+ღ  Bisexual
+ღ
+ღ  Gay
+ღ
+ღ  Straight
+ღ
+ღ  Lesbian
+ღ
+ღ  Transgender
+ღ
+ღ  Trap
+ღ
+ღ  Shemale
+ღ
+
+•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
+
+usage :arrow_heading_down:
+
+$add            To add a role
+$remove     To remove a role
+
+   `]
+    let page = 1;
+
+    let embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setFooter(`Page ${page} of ${pages.length}`)
+	.setThumbnail(message.author.avatarURL)
+    .setDescription(pages[page-1])
+
+    message.channel.sendEmbed(embed).then(msg => {
+
+        msg.react('◀').then( r => {
+            msg.react('▶')
+
+
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+
+
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+
+
+
+        backwards.on('collect', r => {
+            if (page === 1) return;
+            page--;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+			embed.setThumbnail(message.author.avatarURL);
+            msg.edit(embed)
+        })
+        forwards.on('collect', r => {
+            if (page === pages.length) return;
+            page++;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+			embed.setThumbnail(message.author.avatarURL);
+            msg.edit(embed)
+        })
+        })
+    })
+    }
+});  
+
+
+
+
+
 client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Night Blade
   if (message.content.startsWith('$remove NA')) {
      if(!message.channel.guild) return;
@@ -126,18 +313,18 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
  
 
  client.on('message', message => {
-  if (message.content.startsWith('$add EU')) {
+  if (message.content.startsWith('$add EP')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "[EU] Europe"));
-    message.reply('Your role updated to  **[EU] Europe** ');
+  message.member.addRole(message.guild.roles.find("name", "[EP] Europe"));
+    message.reply('Your role updated to  **[EP] Europe** ');
  }
  });
  
   client.on('message', message => {
-  if (message.content.startsWith('$remove EU')) {
+  if (message.content.startsWith('$remove EP')) {
      if(!message.channel.guild) return;
-  message.member.removeRole(message.guild.roles.find("name", "[EU] Europe"));
-    message.reply('Your role **[EU] Europe** has been Removed');
+  message.member.removeRole(message.guild.roles.find("name", "[EP] Europe"));
+    message.reply('Your role **[EP] Europe** has been Removed');
  }
  }); 
  
@@ -250,36 +437,585 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
   message.member.removeRole(message.guild.roles.find("name", "[CA] CANADA"));
     message.reply('Your role **[CA] CANADA** has been Removed');
  }
- }); 
+}); 	
 
- 
- client.on("message", message => {
-  if (message.content === "$roles") {
-   const embed = new Discord.RichEmbed()
-       .setColor('#5f0b77')
-       .setFooter('Dating Roles Bot')
-       .setThumbnail(message.author.avatarURL)
-       .setDescription(`
-       
- EU   -------------------> Europe
- NA   -------------------> North America
- SA   -------------------> South America
- MA  -------------------> Morocco
- AUS -------------------> Australia
- AS    -------------------> Asia
- RUS  -------------------> Russia
- GER  -------------------> Germany
- UK    -------------------> United Kingdom
- CA    -------------------> Canada
- NZ   -------------------> New Zealand
- EU   -------------------> Dubai
- 
- ==================================
-      [Prefix : $]
- 
- $add                   add a role
- $remove                   remove a role
-`)
+//Games Side
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add RS6')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Rainbow Six Siege"));
+    message.reply('Your role updated to  **Rainbow Six Siege** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove RS6')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Rainbow Six Siege"));
+    message.reply('Your role **Rainbow Six Siege** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add GTA5')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Grand Theft Auto 5"));
+    message.reply('Your role updated to  **Grand Theft Auto 5** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove GTA5')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Grand Theft Auto 5"));
+    message.reply('Your role **Grand Theft Auto 5** has been Removed');
+ }
+});
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add RUST')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "RUST"));
+    message.reply('Your role updated to  **RUST** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove RUST')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "RUST"));
+    message.reply('Your role **RUST** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add GMOD')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Garrys Mod"));
+    message.reply('Your role updated to  **Garrys Mod** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove GMOD')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Garrys Mod"));
+    message.reply('Your role **Garrys Mod** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add CSGO')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Counter Strike Global Offensive"));
+    message.reply('Your role updated to  **Counter Strike Global Offensive** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove CSGO')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Counter Strike Global Offensive"));
+    message.reply('Your role **Counter Strike Global Offensive** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add BF1')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Battlefield 1"));
+    message.reply('Your role updated to  **Battlefield 1** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove BF1')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Battlefield 1"));
+    message.reply('Your role **Battlefield 1** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add BF3')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Battlefield 3"));
+    message.reply('Your role updated to  **Battlefield 3** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove BF3')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Battlefield 3"));
+    message.reply('Your role **Battlefield 3** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add BF4')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Battlefield 4"));
+    message.reply('Your role updated to  **Battlefield 4** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove BF4')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Battlefield 4"));
+    message.reply('Your role **Battlefield 4** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add FORTNITE')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Fortnite"));
+    message.reply('Your role updated to  **[EU] Dubai** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove FORTNITE')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "FORTNITE"));
+    message.reply('Your role **FORTNITE** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add MC')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Minecraft"));
+    message.reply('Your role updated to  **Minecraft** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove MC')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Minecraft"));
+    message.reply('Your role **Minecraft** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add PUBG')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Playerunknowns Battlegrounds"));
+    message.reply('Your role updated to  **Playerunknowns Battlegrounds** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove PUBG	')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Playerunknowns Battlegrounds"));
+    message.reply('Your role **Playerunknowns Battlegrounds** has been Removed');
+ }
+});
+
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add FIFA 18')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "FIFA 2018"));
+    message.reply('Your role updated to  **FIFA 2018** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove FIFA 18')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "FIFA 2018"));
+    message.reply('Your role **FIFA 2018** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add COD')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Call of duty"));
+    message.reply('Your role updated to  **Call of duty** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove COD')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Call of duty"));
+    message.reply('Your role **Call of duty** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add COD WW3')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Call of Duty World War 3"));
+    message.reply('Your role updated to  **Call of Duty World War 3** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove COD WW3')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Call of Duty World War 3"));
+    message.reply('Your role **Call of Duty World War 3** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add COD BO3')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Call of duty black ops 3"));
+    message.reply('Your role updated to  **Call of duty black ops 3** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove COD BO3')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Call of duty black ops 3"));
+    message.reply('Your role **Call of duty black ops 3** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add BRAWLHALLLA')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "BRAWLHALLLA"));
+    message.reply('Your role updated to  **BRAWLHALLLA** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove BRAWLHALLLA')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "BRAWLHALLLA"));
+    message.reply('Your role **BRAWLHALLLA** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add PES 18')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Pro Evolution Soccer 2018"));
+    message.reply('Your role updated to  **Pro Evolution Soccer 2018** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove PES 18')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Pro Evolution Soccer 2018"));
+    message.reply('Your role **Pro Evolution Soccer 2018** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add DOFUS')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "DOFUS"));
+    message.reply('Your role updated to  **DOFUS** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove DOFUS')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "DOFUS"));
+    message.reply('Your role **DOFUS** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add H1Z1')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "H1Z1"));
+    message.reply('Your role updated to  **H1Z1** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove H1Z1')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "H1Z1"));
+    message.reply('Your role **H1Z1** has been Removed');
+ }
+});
+
+//General Roles
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Coder')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Coder"));
+    message.reply('Your role updated to  **Coder** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Coder')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Coder"));
+    message.reply('Your role **Coder** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Gamer')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Gamer"));
+    message.reply('Your role updated to  **Gamer** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Gamer')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Gamer"));
+    message.reply('Your role **Gamer** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Gamer Girl')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Gamer Girl"));
+    message.reply('Your role updated to  **Gamer Girl** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Gamer Girl')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Gamer Girl"));
+    message.reply('Your role **Gamer Girl** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Female')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Female"));
+    message.reply('Your role updated to  **Female** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Female')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Female"));
+    message.reply('Your role **Female** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Male')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Male"));
+    message.reply('Your role updated to  **Male** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Male')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Male"));
+    message.reply('Your role **Male** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Streamer')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Streamer"));
+    message.reply('Your role updated to  **Streamer** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Streamer')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Streamer"));
+    message.reply('Your role **Streamer** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Youtuber')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Youtuber"));
+    message.reply('Your role updated to  **Youtuber** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Youtuber')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Youtuber"));
+    message.reply('Your role **Youtuber** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Designer')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Designer"));
+    message.reply('Your role updated to  **Designer** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Designer')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Designer"));
+    message.reply('Your role **Designer** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add DJ')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "DJ"));
+    message.reply('Your role updated to  **DJ** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove DJ')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "DJ"));
+    message.reply('Your role **DJ** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Transgender')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Transgender"));
+    message.reply('Your role updated to  **Transgender** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Transgender')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Transgender"));
+    message.reply('Your role **Transgender** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Shemale')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Shemale"));
+    message.reply('Your role updated to  **Shemale** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Shemale')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Shemale"));
+    message.reply('Your role **Shemale** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Lesbian')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Lesbian"));
+    message.reply('Your role updated to  **Lesbian** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Lesbian')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Lesbian"));
+    message.reply('Your role **Lesbian** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Trap')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Trap"));
+    message.reply('Your role updated to  **Trap** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Trap')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Trap"));
+    message.reply('Your role **Trap** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Bisexual')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Bisexual"));
+    message.reply('Your role updated to  **Bisexual** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Bisexual')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Bisexual"));
+    message.reply('Your role **Bisexual** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Gay')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Gay"));
+    message.reply('Your role updated to  **Gay** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Gay')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Gay"));
+    message.reply('Your role **Gay** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add Straight')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Straight"));
+    message.reply('Your role updated to  **Straight** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove Straight')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Straight"));
+    message.reply('Your role **Straight** has been Removed');
+ }
+});
+
+
+    client.on('message', message => {
+  if (message.content.startsWith('$add LOL')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "League of Legends"));
+    message.reply('Your role updated to  **League of Legends** ');
+ }
+ });
+  client.on('message', message => {
+  if (message.content.startsWith('$remove LOL')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "League of Legends"));
+    message.reply('Your role **League of Legends** has been Removed');
+ }
+});
  message.channel.send(embed);
 }  
 });
