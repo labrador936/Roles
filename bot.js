@@ -1022,7 +1022,193 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
 
 
 
+client.on('message', rebel => {
+    if (rebel.content === "roles") {
+                  if(!rebel.channel.guild) return rebel.reply('** This command only for servers **');
+                             if(!rebel.member.hasPermission('ADMINISTRATOR')) return      rebel.channel.send('**You Dont Have permission** `ADMINISTRATOR`' );
+                  const embed = new Discord.RichEmbed()
+        .setDescription('** Hey [Larpraz] and [ℕїℊℌ⊥ ßʟαⅾℯ] im creating the roles right now !**')
+    rebel.channel.sendEmbed(embed);
+    
+        rebel.guild.createRole({
+        name : "Counter Strike Global Offensive",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Grand Theft Auto 5",
+        permissions :   [1],
+        color : " #ffffff"
+    })
 
+        rebel.guild.createRole({
+        name : "Rainbow Six Siege",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Garrys Mod",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "RUST",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Battlefield 1",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Battlefield 3",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Battlefield 4",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Minecraft",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Playerunknowns Battlegrounds",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Call of duty",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Call of Duty World War 3",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Call of duty black ops 3",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "BRAWLHALLA",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Pro Evolution Soccer 2018",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "DOFUS",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "H1Z1",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "FIFA 2018",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+
+        rebel.guild.createRole({
+        name : "Coder",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Female",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Male",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Streamer",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Youtuber",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Designer",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "DJ",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Bisexual",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Gay",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Straight",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Lesbian",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Transgender",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Trap",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Shemale",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "FORTNITE",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "League Of Legends",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+        rebel.guild.createRole({
+        name : "Lesbian",
+        permissions :   [1],
+        color : " #ffffff"
+    })
+ }
+}); 
 
 
 
