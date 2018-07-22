@@ -572,7 +572,7 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
   if (message.content.startsWith('$add FORTNITE')) {
      if(!message.channel.guild) return;
   message.member.addRole(message.guild.roles.find("name", "FORTNITE"));
-    message.reply('Your role updated to  **[EU] Dubai** ');
+    message.reply('Your role updated to  **FORTNITE** ');
  }
  });
   client.on('message', message => {
