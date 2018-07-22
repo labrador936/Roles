@@ -682,16 +682,16 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
 
 
     client.on('message', message => {
-  if (message.content.startsWith('$add BRAWLHALLLA')) {
+  if (message.content.startsWith('$add BRAWLHALLA')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "BRAWLHALLLA"));
+  message.member.addRole(message.guild.roles.find("name", "BRAWLHALLA"));
     message.reply('Your role updated to  **BRAWLHALLLA** ');
  }
  });
   client.on('message', message => {
-  if (message.content.startsWith('$remove BRAWLHALLLA')) {
+  if (message.content.startsWith('$remove BRAWLHALLA')) {
      if(!message.channel.guild) return;
-  message.member.removeRole(message.guild.roles.find("name", "BRAWLHALLLA"));
+  message.member.removeRole(message.guild.roles.find("name", "BRAWLHALLA"));
     message.reply('Your role **BRAWLHALLLA** has been Removed');
  }
 });
