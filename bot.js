@@ -75,7 +75,7 @@ $remove     To remove a role
 :video_game:  Games :video_game:
 
  
-ღ  RS6    --------> Rainbow Six Siege
+ღ  R6S    --------> Rainbow Six Siege
 ღ
 ღ  GTA5
 ღ
@@ -442,14 +442,14 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
 //Games Side
 
     client.on('message', message => {
-  if (message.content.startsWith('$add RS6')) {
+  if (message.content.startsWith('$add R6S')) {
      if(!message.channel.guild) return;
   message.member.addRole(message.guild.roles.find("name", "Rainbow Six Siege"));
     message.reply('Your role updated to  **Rainbow Six Siege** ');
  }
  });
   client.on('message', message => {
-  if (message.content.startsWith('$remove RS6')) {
+  if (message.content.startsWith('$remove R6S')) {
      if(!message.channel.guild) return;
   message.member.removeRole(message.guild.roles.find("name", "Rainbow Six Siege"));
     message.reply('Your role **Rainbow Six Siege** has been Removed');
