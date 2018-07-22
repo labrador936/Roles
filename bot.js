@@ -491,14 +491,14 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
     client.on('message', message => {
   if (message.content.startsWith('$add GMOD')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "Garrys Mod"));
+  message.member.addRole(message.guild.roles.find("name", "Garry's Mod"));
     message.reply('Your role updated to  **Garrys Mod** ');
  }
  });
   client.on('message', message => {
   if (message.content.startsWith('$remove GMOD')) {
      if(!message.channel.guild) return;
-  message.member.removeRole(message.guild.roles.find("name", "Garrys Mod"));
+  message.member.removeRole(message.guild.roles.find("name", "Garry's Mod"));
     message.reply('Your role **Garrys Mod** has been Removed');
  }
 });
@@ -571,7 +571,7 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
     client.on('message', message => {
   if (message.content.startsWith('$add FORTNITE')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "Fortnite"));
+  message.member.addRole(message.guild.roles.find("name", "FORTNITE"));
     message.reply('Your role updated to  **[EU] Dubai** ');
  }
  });
@@ -603,14 +603,14 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
     client.on('message', message => {
   if (message.content.startsWith('$add PUBG')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "Playerunknowns Battlegrounds"));
+  message.member.addRole(message.guild.roles.find("name", "Playerunknown's Battlegrounds"));
     message.reply('Your role updated to  **Playerunknowns Battlegrounds** ');
  }
  });
   client.on('message', message => {
   if (message.content.startsWith('$remove PUBG	')) {
      if(!message.channel.guild) return;
-  message.member.removeRole(message.guild.roles.find("name", "Playerunknowns Battlegrounds"));
+  message.member.removeRole(message.guild.roles.find("name", "Playerunknown's Battlegrounds"));
     message.reply('Your role **Playerunknowns Battlegrounds** has been Removed');
  }
 });
