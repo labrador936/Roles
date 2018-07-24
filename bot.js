@@ -1012,7 +1012,7 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
   client.on('message', message => {
   if (message.content.startsWith('$remove LOL')) {
      if(!message.channel.guild) return;
-  message.member.removeRole(message.guild.roles.find("name", "League of Legends"));
+  message.member.removeRole(message.guild.roles.find("name", "League Of Legends"));
     message.reply('Your role **League of Legends** has been Removed');
  }
 });
