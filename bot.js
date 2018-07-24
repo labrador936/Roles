@@ -256,7 +256,7 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
 client.on('message', message => {
   if (message.content.startsWith('$add EU')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "[EU] DUBAI"));
+  message.member.addRole(message.guild.roles.find("name", "[EU] Dubai"));
     message.reply('Your role updated to **[EU] Dubai** ');
  }
  }); 
