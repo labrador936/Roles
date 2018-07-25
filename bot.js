@@ -1005,7 +1005,7 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
     client.on('message', message => {
   if (message.content.startsWith('$add LOL')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "League of Legends"));
+  message.member.addRole(message.guild.roles.find("name", "League Of Legends"));
     message.reply('Your role updated to  **League of Legends** ');
  }
  });
