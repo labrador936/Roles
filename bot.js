@@ -132,6 +132,8 @@ $remove     To remove a role
 ღ
 ღ  Gamer
 ღ
+ღ  Otaku
+ღ
 ღ  Gamer Girl
 ღ
 ღ  Female
@@ -212,6 +214,26 @@ $remove     To remove a role
     })
     }
 });  
+
+
+
+
+client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Night Blade
+  if (message.content.startsWith('$remove Otaku')) {
+     if(!message.channel.guild) return;
+  message.member.removeRole(message.guild.roles.find("name", "Otaku"));
+    message.reply('Your role **Otaku** has been Removed');
+ }
+ }); 
+	 
+	 
+client.on('message', message => {
+  if (message.content.startsWith('$add Otaku')) {
+     if(!message.channel.guild) return;
+  message.member.addRole(message.guild.roles.find("name", "Otaku"));
+    message.reply('Your role updated to **Otaku** ');
+ }
+ }); 
 
 
 
