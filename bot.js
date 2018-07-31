@@ -30,6 +30,7 @@ client.user.setGame(`Dating Roles |$roles `,"http://twitch.tv/S-F")
 
 
 
+
 client.on('message', message => {
 if (message.content.startsWith('$roles')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
