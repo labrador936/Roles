@@ -182,8 +182,7 @@ $remove     To remove a role
 ღ
 ღ  MC    --------> Minecraft
 ღ
-ღ  PUBG    --------> Playerunknowns Battlegrounds
-ღ
+ღ  PUBG    --------> Playerunknown's Battlegrounds
 ღ  FIFA 18
 ღ
 ღ  COD    --------> Call of duty
