@@ -718,7 +718,7 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
   if (message.content.startsWith('$remove PUBG	')) {
      if(!message.channel.guild) return;
   message.member.removeRole(message.guild.roles.find("name", "Playerunknown's Battlegrounds"));
-    message.reply('Your role **Playerunknowns Battlegrounds** has been Removed');
+    message.reply('Your role **PUBG** has been Removed');
  }
 });
 
