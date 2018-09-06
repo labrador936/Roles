@@ -182,7 +182,7 @@ $remove     To remove a role
 ღ
 ღ  MC    --------> Minecraft
 ღ
-ღ  PUBG    --------> Playerunknown's Battlegrounds
+ღ  PUBG    --------> Playerunknowns Battlegrounds
 ღ  FIFA 18
 ღ
 ღ  COD    --------> Call of duty
@@ -709,15 +709,15 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
     client.on('message', message => {
   if (message.content.startsWith('$add PUBG')) {
      if(!message.channel.guild) return;
-  message.member.addRole(message.guild.roles.find("name", "Playerunknown's Battlegrounds"));
-    message.reply('Your role updated to  **Playerunknown's Battlegrounds** ');
+  message.member.addRole(message.guild.roles.find("name", "Playerunknowns Battlegrounds"));
+    message.reply('Your role updated to  **Playerunknowns Battlegrounds** ');
  }
  });
   client.on('message', message => {
   if (message.content.startsWith('$remove PUBG	')) {
      if(!message.channel.guild) return;
-  message.member.removeRole(message.guild.roles.find("name", "Playerunknown's Battlegrounds"));
-    message.reply('Your role **Playerunknown's Battlegrounds** has been Removed');
+  message.member.removeRole(message.guild.roles.find("name", "Playerunknowns Battlegrounds"));
+    message.reply('Your role **Playerunknowns Battlegrounds** has been Removed');
  }
 });
 
