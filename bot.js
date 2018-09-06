@@ -711,14 +711,14 @@ client.on('message', message => {  //Dating Roles Bot Created By Larpraz And Nig
   if (message.content.startsWith('$add PUBG')) {
      if(!message.channel.guild) return;
   message.member.addRole(message.guild.roles.find("name", "Playerunknown's Battlegrounds"));
-    message.reply('Your role updated to  **Playerunknowns Battlegrounds** ');
+    message.reply('Your role updated to  **Playerunknown's Battlegrounds** ');
  }
  });
   client.on('message', message => {
   if (message.content.startsWith('$remove PUBG	')) {
      if(!message.channel.guild) return;
   message.member.removeRole(message.guild.roles.find("name", "Playerunknown's Battlegrounds"));
-    message.reply('Your role **PUBG** has been Removed');
+    message.reply('Your role **Playerunknown's Battlegrounds** has been Removed');
  }
 });
 
