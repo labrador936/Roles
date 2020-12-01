@@ -148,58 +148,7 @@ if (message.content.startsWith('$roles')) { /// This is The DMS Code Send The He
 ღ   
 •—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
 
-Click On ▶ To Go Games Side
 
-usage :arrow_heading_down:
-
-$add            To add a role
-$remove     To remove a role
-   `
-,`
-•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
-:video_game:  Games :video_game:
-
- 
-ღ  R6S    --------> Rainbow Six Siege
-ღ
-ღ  GTA5
-ღ
-ღ  CSGO    --------> Counter Strike Global Offensive
-ღ
-ღ  RUST
-ღ
-ღ  GMOD    --------> Garrys Mod
-ღ
-ღ  LOL    --------> League of Legends
-ღ
-ღ  BF1    --------> Battlefield 1
-ღ
-ღ  BF3    --------> Battlefield 3
-ღ
-ღ  BF4    --------> Battlefield 4
-ღ
-ღ  FORTNITE
-ღ
-ღ  MC    --------> Minecraft
-ღ
-ღ  PUBG    --------> Playerunknowns Battlegrounds
-ღ  FIFA 18
-ღ
-ღ  COD    --------> Call of duty
-ღ
-ღ  COD WW3    --------> Call of duty world war 3
-ღ
-ღ  COD BO3   --------> Call of duty black ops 3
-ღ
-ღ  BRAWLHALLA
-ღ
-ღ  PES 18    --------> Pro Evolution Soccer 2018
-ღ
-ღ  DOFUS
-ღ
-ღ  H1Z1
-ღ
-•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•
 
 Click On ▶ To Go To General Roles
 
